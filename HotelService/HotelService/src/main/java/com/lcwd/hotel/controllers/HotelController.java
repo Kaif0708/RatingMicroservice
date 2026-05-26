@@ -19,7 +19,7 @@ public class HotelController {
 
     //create
 
-    @PreAuthorize("hasAuthority('Admin')")
+    //@PreAuthorize("hasAuthority('Admin')")
     @PostMapping
     public ResponseEntity<Hotel> createHotel(@RequestBody Hotel hotel) {
         return ResponseEntity.status(HttpStatus.CREATED).body(hotelService.create(hotel));
@@ -27,7 +27,7 @@ public class HotelController {
 
 
     //get single
-    @PreAuthorize("hasAuthority('SCOPE_internal')")
+    //@PreAuthorize("hasAuthority('SCOPE_internal')")
     @GetMapping("/{hotelId}")
     public ResponseEntity<Hotel> createHotel(@PathVariable String hotelId) {
         return ResponseEntity.status(HttpStatus.OK).body(hotelService.get(hotelId));
@@ -35,7 +35,7 @@ public class HotelController {
 
 
     //get all
-    @PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
+    //@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
     @GetMapping
     public ResponseEntity<List<Hotel>> getAll(){
         return ResponseEntity.ok(hotelService.getAll());
