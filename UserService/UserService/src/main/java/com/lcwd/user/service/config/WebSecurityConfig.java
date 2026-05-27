@@ -18,7 +18,10 @@ public class WebSecurityConfig {
         security.csrf().disable()
                 .authorizeHttpRequests()
                 .anyRequest()
-                .permitAll();
+                .authenticated()
+                .and()
+                .oauth2ResourceServer()
+                .jwt();
 
         return security.build();
 

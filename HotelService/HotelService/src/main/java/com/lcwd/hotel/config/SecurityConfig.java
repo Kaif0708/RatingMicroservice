@@ -20,7 +20,10 @@ public class SecurityConfig {
         security.csrf().disable()
                 .authorizeHttpRequests()
                 .anyRequest()
-                .permitAll();
+                .authenticated()
+                .and()
+                .oauth2ResourceServer()
+                .jwt();
 
         return security.build();
     }

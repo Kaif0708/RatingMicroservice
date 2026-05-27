@@ -27,7 +27,7 @@ public class AuthController {
 
     @GetMapping("/login")
     public ResponseEntity<AuthResponse> login(
-            @RegisteredOAuth2AuthorizedClient("okta") OAuth2AuthorizedClient client,
+            @RegisteredOAuth2AuthorizedClient("google") OAuth2AuthorizedClient client,
             @AuthenticationPrincipal OidcUser user,
             Model model
     ) {

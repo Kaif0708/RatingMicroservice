@@ -31,7 +31,7 @@ const Home = () => {
             <div style={styles.features}>
                 {[
                     { icon: <Zap color="#6366f1" />, title: "Blazing Fast", desc: "Built with Spring Boot and React for peak performance." },
-                    { icon: <Shield color="#22c55e" />, title: "Secure", desc: "Integrated with Okta OAuth2 for enterprise-grade security." },
+                    { icon: <Shield color="#22c55e" />, title: "Secure", desc: "Integrated with Google OAuth2 for secure access Control." },
                     { icon: <Star color="#f59e0b" />, title: "Scalable", desc: "Microservices design ensures independent scaling of services." }
                 ].map((f, i) => (
                     <motion.div 

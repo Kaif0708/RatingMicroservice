@@ -15,8 +15,11 @@ public class SecurityConfig {
 
         httpSecurity.csrf().disable()
                 .authorizeExchange()
+                .pathMatchers("/auth/**").authenticated()
                 .anyExchange()
-                .permitAll();
+                .permitAll()
+                .and()
+                .oauth2Login();
 
 
         return httpSecurity.build();
